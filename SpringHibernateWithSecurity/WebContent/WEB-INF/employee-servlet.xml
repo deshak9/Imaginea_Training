@@ -16,7 +16,7 @@
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
     <context:annotation-config />
-    <context:component-scan base-package="com.howtodoinjava.controller" />
+    <context:component-scan base-package="com.pramati.controller" />
     <bean id="jspViewResolver"
         class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass"
@@ -53,8 +53,8 @@
             </props>
         </property>
     </bean>
-    <bean id="employeeDAO" class="com.howtodoinjava.dao.EmployeeDaoImpl"></bean>
-    <bean id="employeeManager" class="com.howtodoinjava.service.EmployeeManagerImpl"></bean>
+    <bean id="employeeDAO" class="com.pramati.dao.EmployeeDaoImpl"></bean>
+    <bean id="employeeManager" class="com.pramati.service.EmployeeManagerImpl"></bean>
     <tx:annotation-driven />
     <bean id="transactionManager"
         class="org.springframework.orm.hibernate3.HibernateTransactionManager">
