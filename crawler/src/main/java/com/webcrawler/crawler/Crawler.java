@@ -18,6 +18,10 @@ public class Crawler {
 	public void changeConfiguration(String[] arg){
 		Config.year=arg[0];
 	}
+	/**
+	 * YEAR as Command line argument(by default 2014)
+	 * Des : Give year as command line argument. For which year the emails to be download? 
+	 * /
 	
 	public static void main(String[] arg){
 		
