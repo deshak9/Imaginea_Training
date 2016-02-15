@@ -53,6 +53,9 @@
             </props>
         </property>
     </bean>
+    <bean id="studentDAO" class="com.pramati.dao.StudentDaoImpl"></bean>
+    <bean id="studentManager" class="com.pramati.service.StudentManagerImpl"></bean>
+    
     <bean id="employeeDAO" class="com.pramati.dao.EmployeeDaoImpl"></bean>
     <bean id="employeeManager" class="com.pramati.service.EmployeeManagerImpl"></bean>
     <tx:annotation-driven />

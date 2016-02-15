@@ -6,5 +6,7 @@
 <hibernate-configuration>
     <session-factory>
 		<mapping class="com.pramati.entity.EmployeeEntity" />
+		<mapping class="com.pramati.entity.StudentEntity" />
     </session-factory>
+    
 </hibernate-configuration>

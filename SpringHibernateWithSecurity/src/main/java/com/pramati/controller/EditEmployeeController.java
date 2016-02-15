@@ -13,11 +13,12 @@ import com.pramati.entity.EmployeeEntity;
 import com.pramati.service.EmployeeManager;
 
 @Controller
+@RequestMapping(value="/employee")
 public class EditEmployeeController {
 	@Autowired
 	private EmployeeManager employeeManager;
 	
-	@RequestMapping(value="/list", method = RequestMethod.GET)
+	@RequestMapping(value="", method = RequestMethod.GET)
 	public String listEmployees(ModelMap map){
 		map.addAttribute("employee", new EmployeeEntity());
 		map.addAttribute("employeeList", employeeManager.getAllEmployees());
@@ -27,34 +28,18 @@ public class EditEmployeeController {
 	@RequestMapping(value="/add", method = RequestMethod.POST)
 	public String addEmployee(@ModelAttribute(value="employee") EmployeeEntity employee, BindingResult result){
 		employeeManager.addEmployee(employee);
-		return "redirect:/list";
+		return "redirect:/employee/";
 	}
 	
 	@RequestMapping(value = "/delete/{employeeId}")
 	public String deleteEmployee(@PathVariable("employeeId") Integer employeeId){
 		employeeManager.deleteEmployee(employeeId);
-		return "redirect:/list";
+		return "redirect:/employee/";
 	}
 	
 	public void setEmployeeManager(EmployeeManager employeeManager){
 		this.employeeManager = employeeManager;
 	}
-	
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String login(ModelMap model) {
-        return "login";
-    }
- 
-    @RequestMapping(value = "/accessdenied", method = RequestMethod.GET)
-    public String loginerror(ModelMap model) {
-        model.addAttribute("error", "true");
-        return "denied";
-    }
- 
-    @RequestMapping(value = "/logout", method = RequestMethod.GET)
-    public String logout(ModelMap model) {
-        return "logout";
-    }
 }
 
 

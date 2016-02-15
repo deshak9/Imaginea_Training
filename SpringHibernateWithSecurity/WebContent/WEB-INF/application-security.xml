@@ -12,7 +12,7 @@
 		<intercept-url pattern="/logout" access="permitAll" />
 		<intercept-url pattern="/accessdenied" access="permitAll" />
 		<intercept-url pattern="/**" access="hasRole('ROLE_USER')" />
-		<form-login login-page="/login" default-target-url="/list" authentication-failure-url="/accessdenied" />
+		<form-login login-page="/login" default-target-url="/" authentication-failure-url="/accessdenied" />
 		<logout logout-success-url="/logout" />
 	</http>
 
